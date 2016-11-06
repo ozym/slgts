@@ -1,0 +1,85 @@
+.TH MSDETIDE 1 "15 February 2014" "MSEED TIDE CREX/GTS TOOLS"
+.SH NAME
+slgts - seedlink/datalink client to build CREX formatted files
+.SH SYNOPSIS
+.B "slgts"
+[-hvw]
+[-i\ \fIid\fP]
+[-d\ \fIdelay\fP]
+[-t\ \fItimeout\fP]
+[-k\ \fIheartbeat\fP]
+[-l\ \fIlist_file\fP]
+[-S\ \fIstreams\fP]
+[-s\ \fIselectors\fP]
+[-N\ \fIfirfile\fP]
+[-F\ \fIfilter\fP ...]
+[-I\ \fItag\fP]
+[-A\ \fIalpha\fP]
+[-B\ \fIbeta\fP]
+[-L\ \fIlatitude\fP]
+[-Z\ \fIzone\fP]
+[-T\ \fItide\fP]
+[<\fIseedlink_server\fP>]
+[<\fIgts_dir\fP>]
+.SH DESCRIPTION
+.PP
+The seedlink client
+.I slgts
+will convert incoming MSEED packets into ASCII formatted CREX packates which can be optionally stored in a directory.
+.SH OPTIONS
+.TP 5
+.B "-h --help"
+provide usage help
+.TP 5
+.B "-v --verbose"
+run program in verbose mode, multiple flags increase the amount of noise
+.TP 5
+.B "-d --delay \fIseconds\fP"
+delay used for reconnecting to the seedlink server \fB[30]\fP
+.TP 5
+.B "-t --timeout \fIseconds\fP"
+reset time after no data has arrived from the seedlink server \fB[600]\fP
+.TP 5
+.B "-k --heartbeat \fIseconds\fP"
+send a keep alive message for low packet rate links \fB[0]\fP
+.TP 5
+.B "-l --listfile \fIfile\fP"
+file containing a list of streams to select from the seedlink server
+.TP 5
+.B "-S --streams \fIstreams\fP"
+which stations and streams to select from the seedlink server \fB[*_*]\fP
+.TP 5
+.B "-s --selection \fItag\fP"
+which channels to select by default from the seedlink server \fB[???]\fP
+.TP 5
+.B "-N --firfile \fIfile\fP"
+provide a FIR filters definition file
+.TP 5
+.B "-F --filter \fIname\fP"
+add a FIR decimation filter
+.TP 5
+.B "-I --tag \fItag\fP"
+provide CREX ID tag
+.TP 5
+.B "-A --alpha \fIfactor\fP"
+add offset to input samples
+.TP 5
+.B "-B --beta \fIbeta\fP"
+scale input samples
+.TP 5
+.B "-L --latitude \fIvalue\fP"
+provide reference latitude
+.TP 5
+.B "-Z --zone \fIoffset\fP"
+provide reference time zone offet
+.TP 5
+.B "-T --tide \fIlabel/amplitude/tag\fP"
+provide tidal constants 
+.SH USAGE
+This \fIseedlink\fP client converts incoming MSEED data and converting the samples into ASCII formatted CREX files.
+.SH SEE ALSO
+libmseed, libslink
+.SH AUTHOR
+Mark Chadwick
+.SH COPYRIGHT
+Copyright 2014 Geological \& Nuclear Sciences (GNS Science) Ltd.
