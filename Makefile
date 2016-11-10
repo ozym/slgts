@@ -5,7 +5,7 @@
 #   CFLAGS : Specify compiler options to use
 #
 
-CFLAGS += -I. -DPACKAGE_VERSION=\"1.0.0\" -DFIRFILTERS=\"/etc/filters.fir\"
+CFLAGS += -I. -DPACKAGE_VERSION=\"1.0.1\" -DFIRFILTERS=\"/etc/filters.fir\"
 
 LDFLAGS =
 LDLIBS = -lcrex -ltidal -ldali -lslink -lmseed -lm
