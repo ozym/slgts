@@ -8,7 +8,7 @@
 CFLAGS += -I. -DPACKAGE_VERSION=\"1.0.1\" -DFIRFILTERS=\"/etc/filters.fir\"
 
 LDFLAGS =
-LDLIBS = -lcrex -ltidal -ldali -lslink -lmseed -lm
+LDLIBS = -lcrex -ltidal -lslink -lmseed -lm
 
 all: slgts msgts
 
